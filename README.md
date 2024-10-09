@@ -72,4 +72,16 @@ print("Hello мне")
 
 Состояние modified означает, что Git сравнил содержимое файла с последней сохранённой версией и нашёл отличия. Например, файл был закоммичен и после этого изменён.
 
+## Жизненный цикл файла в Git
+
+
+```mermaid
+graph LR;
+untracked -- "git add" --> staged;
+staged    -- "git commit"     --> tracked/comitted;
+modified    -- "git add" --> staged
+tracked/comitted -- "Изменения" --> modified;
+staged -- "Изменения" --> modified;
+```
+
 
